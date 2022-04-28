@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "708622187276",
+    "project_id": "sanrachna-145c7",
+    "storage_bucket": "sanrachna-145c7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708622187276:android:3597c166f6aa794be92729",
+        "android_client_info": {
+          "package_name": "com.sanrachna"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "708622187276-h787j9fq9mi6m5iq7l1f88r52uigulu6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBV3lbxGexCK0OINsQsWL9CEN3jEY1vIV4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "708622187276-h787j9fq9mi6m5iq7l1f88r52uigulu6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
