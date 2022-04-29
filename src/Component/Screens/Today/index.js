@@ -59,7 +59,7 @@ export const Today = () => {
                 handleToChat={handleToChat}
             />
 
-            <ScrollView style={{ marginBottom: 80 }}>
+            <ScrollView>
 
                 <View style={styles.mainView}>
                     <Text style={styles.mainText}>Good Morning, Veronika</Text>

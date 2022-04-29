@@ -5,7 +5,7 @@ import { StyleSheet, View, Text } from 'react-native'
 import { PrimaryWrapper } from '../../CustomHooks'
 
 //Utils
-import { Color } from '../../../Utils'
+import { Color, PrimaryText, width } from '../../../Utils'
 
 //Atoms
 import { PrimaryButton } from '../../../Component/Atoms'
@@ -18,15 +18,15 @@ export const IntroScreen = () => {
     return (
         <PrimaryWrapper>
             <View style={styles.FontContainer}>
-                <Text style={styles.primaryText}>Motherhood :</Text>
-                <Text style={styles.primaryText}>All Love begins and</Text>
-                <Text style={styles.primaryText}>ends there.</Text>
+                <Text style={[PrimaryText, { color: Color.Primary, textAlign: 'center' }]}>Motherhood :</Text>
+                <Text style={[PrimaryText, { color: Color.Primary, textAlign: 'center' }]}>All Love begins and</Text>
+                <Text style={[PrimaryText, { color: Color.Primary, textAlign: 'center' }]}>ends there.</Text>
             </View>
 
             <View style={styles.buttonView}>
                 <PrimaryButton
                     BgColor={Color.Primary}
-                    width={300}
+                    width={width/1.5}
                     textColor="#fff"
                     buttonName="Get start"
                     onPress={() => navigation.navigate('BabyStepScreen')}
@@ -34,11 +34,11 @@ export const IntroScreen = () => {
             </View>
 
             <View style={styles.navigationText}>
-                <Text style={styles.secondaryText}>Already have an account ? {""}
+                <Text style={[PrimaryText, { color: Color.FillText }]}>Already have an account ? {""}
                     <Text
-                        style={[styles.primaryText, { marginTop: 10 }]}
+                        style={[PrimaryText, { color: Color.Primary, fontWeight: 'bold', marginTop: 10 }]}
                         onPress={() => navigation.navigate('LoginScreen')}>
-                           Login
+                        Login
                     </Text>
                 </Text>
             </View>
@@ -60,16 +60,5 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginVertical: 10
-    },
-    secondaryText: {
-        fontSize: 24,
-        color: Color.FillText
-    },
-    primaryText: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        fontFamily: 'quicksand',
-        color: Color.Primary,
-        textAlign: 'center'
     },
 })

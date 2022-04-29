@@ -8,19 +8,17 @@ import { PrimaryWrapper } from '../../CustomHooks'
 import Logo from '../../../Assets/Image/Logo/Logo.png'
 
 //Utils
-import { Color } from '../../../Utils'
+import { Color, PrimaryText } from '../../../Utils'
 
 //Navigation
 import { useNavigation } from '@react-navigation/native';
 
-
-
 export const SplashScreen = () => {
 
-const navigation = useNavigation();
+    const navigation = useNavigation();
 
     useEffect(() => {
-        setTimeout(() => { navigation.replace('IntroScreen')},3000)
+        setTimeout(() => { navigation.replace('IntroScreen') }, 3000)
     }, [])
 
     return (
@@ -29,8 +27,8 @@ const navigation = useNavigation();
                 <Image resizeMode='stretch' source={Logo} style={styles.logoImage} />
             </View>
             <View style={styles.textContainer}>
-                <Text style={styles.secondaryText}>Welcome to</Text>
-                <Text style={styles.primaryText}>SANRACHNA GARBH SANSKAR</Text>
+                <Text style={[PrimaryText, { color: '#000' }]}>Welcome to</Text>
+                <Text style={[PrimaryText, { color: Color.Primary, fontWeight: 'bold' }]}>SANRACHNA GARBH SANSKAR</Text>
             </View>
         </PrimaryWrapper>
     )
@@ -54,14 +52,4 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         marginVertical: 50,
     },
-    secondaryText: {
-        fontSize: 24,
-        color: '#000',
-        fontFamily: 'quicksand',
-    },
-    primaryText: {
-        fontSize: 25,
-        color: Color.Primary,
-        fontFamily: 'quicksand',
-    }
 })

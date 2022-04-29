@@ -5,7 +5,7 @@ import { TextInput, StyleSheet, Text, View, TouchableOpacity, Modal } from 'reac
 import { PrimaryWrapper } from '../../../Component/CustomHooks'
 
 //Utils
-import { Color } from '../../../Utils'
+import { Color, PrimaryText, SecondaryText } from '../../../Utils'
 
 //Atoms
 import { PrimaryButton, PrimaryInput, } from '../../../Component/Atoms'
@@ -24,7 +24,7 @@ export const LoginScreen = () => {
     return (
         <PrimaryWrapper>
             <View style={styles.FontContainer}>
-                <Text style={styles.primaryText}>Welcome Back Mommy!</Text>
+                <Text style={[PrimaryText, { fontWeight: 'bold', color: Color.Primary, textAlign: 'center' }]}>Welcome Back Mommy!</Text>
             </View>
 
             <View style={styles.authContainer}>
@@ -44,7 +44,7 @@ export const LoginScreen = () => {
                 <TouchableOpacity
                     onPress={handleVisible}
                 >
-                    <Text style={styles.secondaryText}>Forgot Password?</Text>
+                    <Text style={[SecondaryText, { fontWeight: 'bold', color: Color.Primary }]}>Forgot Password?</Text>
                 </TouchableOpacity>
             </View>
 
@@ -65,7 +65,7 @@ export const LoginScreen = () => {
             >
                 <View style={styles.modelView}>
                     <View style={styles.modelInnerView}>
-                        <Text style={styles.primaryText}>Forgot Password</Text>
+                        <Text style={[SecondaryText, { fontWeight: 'bold', color: Color.Primary }]}>Forgot Password</Text>
                         <TextInput
                             placeholder='Email Address'
                             style={styles.input}
@@ -99,18 +99,6 @@ const styles = StyleSheet.create({
         marginHorizontal: 50,
         marginTop: 100,
         marginBottom: 50,
-    },
-    primaryText: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        fontFamily: 'quicksand',
-        color: Color.Primary,
-        textAlign: 'center'
-    },
-    secondaryText: {
-        fontSize: 18,
-        color: '#000',
-        fontFamily: 'quicksand',
     },
     buttonView: {
         alignItems: 'center',
@@ -149,12 +137,12 @@ const styles = StyleSheet.create({
         // fontFamily: 'quicksand',
         borderBottomWidth: 1,
         borderBottomColor: 'gray',
-        marginTop:20
+        marginTop: 20
     },
-    viewButton:{
-        justifyContent:'space-between',
-        alignItems:'center',
-        flexDirection:'row',
-        marginTop:30
+    viewButton: {
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexDirection: 'row',
+        marginTop: 30
     }
 })

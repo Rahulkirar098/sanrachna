@@ -6,14 +6,14 @@ import {
 } from 'react-native'
 
 //Import Utils
-import { Color } from '../../../Utils'
+import { Color, SecondaryText } from '../../../Utils'
 
 export const SecondaryInput = ({ iconName, ...props }) => {
     return (
         <View style={styles.root}>
             <TextInput
                 {...props}
-                style={styles.input}
+                style={[SecondaryText, { fontWeight: '500', color: Color.Primary, borderRadius: 5, padding: 20 }]}
             />
         </View>
     )
@@ -24,12 +24,4 @@ const styles = StyleSheet.create({
         backgroundColor: Color.Sceondary,
         marginBottom: 10
     },
-    input: {
-        fontSize: 18,
-        fontWeight: '500',
-        fontFamily: 'quicksand',
-        color: Color.Primary,
-        borderRadius: 5,
-        padding: 20
-    }
 })

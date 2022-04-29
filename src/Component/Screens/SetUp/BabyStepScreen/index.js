@@ -12,7 +12,7 @@ import Baby from '../../../../Assets/Image/Png/Model/baby.png'
 import { useNavigation } from '@react-navigation/native';
 
 //Utils
-import { Color } from '../../../../Utils'
+import { Color, PrimaryText, SecondaryText, width } from '../../../../Utils'
 
 //Atoms
 import { PrimaryButton } from '../../../Atoms'
@@ -26,17 +26,17 @@ export const BabyStepScreen = () => {
             <View style={styles.LogoContainer}>
                 <Image resizeMode='stretch' source={Cloud} style={styles.logoImage} />
                 <View style={styles.textContainer}>
-                    <Text style={styles.secondaryText}>
+                    <Text style={[SecondaryText, { color: Color.Primary, textAlign: 'center', fontWeight: 'bold' }]}>
                         Hey Mommy...
                     </Text>
-                    <Text style={styles.secondaryText}>
+                    <Text style={[SecondaryText, { color: Color.Primary, textAlign: 'center', fontWeight: 'bold' }]}>
                         Your beloved and
                     </Text>
-                    <Text style={styles.secondaryText}>
+                    <Text style={[SecondaryText, { color: Color.Primary, textAlign: 'center', fontWeight: 'bold' }]}>
                         ideal baby will help
 
                     </Text>
-                    <Text style={styles.secondaryText}>
+                    <Text style={[SecondaryText, { color: Color.Primary, textAlign: 'center', fontWeight: 'bold' }]}>
                         you to setup the app
                     </Text>
                 </View>
@@ -47,8 +47,12 @@ export const BabyStepScreen = () => {
             </View>
 
             <View style={styles.buttonContainer}>
-                <PrimaryButton BgColor={Color.Primary} buttonName="Next" textColor="#fff"
+                <PrimaryButton
+                    BgColor={Color.Primary}
+                    buttonName="Next"
+                    textColor="#fff"
                     onPress={() => navigation.navigate('CurrentStageScreen')}
+                    width={width / 1.5}
                 />
             </View>
 
@@ -78,15 +82,9 @@ const styles = StyleSheet.create({
         top: 50,
         left: 50,
     },
-    secondaryText: {
-        fontSize: 20,
-        color: Color.Primary,
-        fontFamily: 'quicksand',
-        textAlign: 'center',
-        fontWeight: 'bold'
-    },
     buttonContainer: {
-        marginVertical: 30,
-        marginHorizontal: 50
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: '5%'
     }
 })

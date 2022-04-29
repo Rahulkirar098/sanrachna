@@ -42,7 +42,7 @@ export const DashboardData = [
         screenName: 'Diet',
         bgColor: DashboardColor.DashFour,
         model: diet,
-        modelStyle: { width: "80%", height: "100%", position: 'absolute', right: 0, bottom: 0 },
+        modelStyle: { width: "85%", height: "100%", position: 'absolute', right: 0, bottom: 0 },
         textStyle: { color: 'black', fontSize: 18, width: 70, position: 'absolute', left: 20, top: 10 },
         routeName: 'DiteScreen'
     },

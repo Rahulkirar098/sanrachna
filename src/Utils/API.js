@@ -1,0 +1,1 @@
+export const firebaseApi = 'https://sanrachna-a968f-default-rtdb.firebaseio.com/Money.json'

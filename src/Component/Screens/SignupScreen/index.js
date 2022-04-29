@@ -5,7 +5,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { PrimaryWrapper } from '../../../Component/CustomHooks'
 
 //Utils
-import { Color } from '../../../Utils'
+import { Color, PrimaryText, SecondaryText, width } from '../../../Utils'
 
 //Atoms
 import { PrimaryButton, SecondaryInput } from '../../../Component/Atoms'
@@ -14,10 +14,10 @@ export const SignupScreen = () => {
     return (
         <PrimaryWrapper>
             <View style={styles.FontContainer}>
-                <Text style={[styles.primaryText, { color: '#000', fontSize: 24 }]}>
+                <Text style={[PrimaryText, { textAlign: 'center', color: '#000', fontWeight: '500' }]}>
                     Hello Mommy!
                 </Text>
-                <Text style={styles.primaryText}>
+                <Text style={[SecondaryText, { textAlign: 'center', color: Color.Primary, fontWeight: 'bold' }]}>
                     Please provide following information...
                 </Text>
             </View>
@@ -48,18 +48,18 @@ export const SignupScreen = () => {
             <View style={styles.buttonView}>
                 <PrimaryButton
                     BgColor={Color.Primary}
-                    width="100%"
+                    width={width / 1.5}
                     textColor="#fff"
                     buttonName="Sign Up"
                 />
             </View>
 
             <View>
-                <Text style={styles.secondaryText}>
+                <Text style={[SecondaryText, { textAlign: 'center', color: Color.Primary, fontWeight: 'bold' }]}>
                     By clicking the above button you agree to our
                 </Text>
                 <TouchableOpacity>
-                    <Text style={[styles.primaryText, { textDecorationLine: 'underline', fontWeight: 'bold' }]}>
+                    <Text style={[SecondaryText, { textAlign: 'center', textDecorationLine: 'underline', color: Color.Primary, fontWeight: 'bold' }]}>
                         Terms of service and privacy policy
                     </Text>
                 </TouchableOpacity>
@@ -72,20 +72,6 @@ export const SignupScreen = () => {
 const styles = StyleSheet.create({
     FontContainer: {
         marginVertical: 50
-    },
-    primaryText: {
-        fontSize: 18,
-        fontWeight: '500',
-        fontFamily: 'quicksand',
-        color: Color.Primary,
-        textAlign: 'center'
-    },
-    secondaryText: {
-        color: '#000',
-        fontSize: 18,
-        fontWeight: '500',
-        fontFamily: 'quicksand',
-        textAlign: 'center',
     },
     buttonView: {
         alignItems: 'center',

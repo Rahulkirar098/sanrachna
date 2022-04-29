@@ -1,4 +1,5 @@
 import React from 'react'
+import { Image } from 'react-native'
 
 //Import Bottom Tab
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
@@ -8,11 +9,16 @@ const BottomTab = createBottomTabNavigator();
 
 import { Dashboard, ExpertScreen, Today } from '../../Component/Screens'
 
-//Utils
-import { Color } from '../../Utils'
 
-//Import Icons
-import Ionicons from 'react-native-vector-icons/Ionicons'
+//Import ICON
+import homeActive from '../../Assets/Icons/BottomBarIcon/homeActive.png'
+import homeUnActive from '../../Assets/Icons/BottomBarIcon/homeUnActive.png'
+import calendarActive from '../../Assets/Icons/BottomBarIcon/calendarActive.png'
+import calendarUnActive from '../../Assets/Icons/BottomBarIcon/calendarUnActive.png'
+import phoneActive from '../../Assets/Icons/BottomBarIcon/phoneActive.png'
+import phoneUnActive from '../../Assets/Icons/BottomBarIcon/phoneUnActive.png'
+import crownActive from '../../Assets/Icons/BottomBarIcon/crownActive.png'
+import crownUnActive from '../../Assets/Icons/BottomBarIcon/crownUnActive.png'
 
 import { StackBottomNavigation } from '../StackBottomNavigation'
 
@@ -25,17 +31,10 @@ export const BottomTabNavigation = () => {
             screenOptions={{
                 headerShown: false,
                 tabBarStyle: {
-                    height: 60,
-                    backgroundColor: Color.Primary,
-                    position: 'absolute',
-                    bottom: 20,
-                    right: 10,
-                    left: 10,
-                    borderRadius: 10
+                    height: 70,
                 },
                 tabBarShowLabel: false,
-                tabBarInactiveTintColor: "#fff",
-                tabBarActiveTintColor: "#000",
+                tabBarInactiveTintColor: "active",
                 tabBarHideOnKeyboard: true,
             }}
             initialRouteName='Dashboard'
@@ -47,11 +46,9 @@ export const BottomTabNavigation = () => {
                 options={{
                     tabBarIcon: ({ color }) => {
                         return (
-                            <Ionicons
-                                name="home"
-                                size={30}
-                                color={color}
-                            />
+                            <>
+                                <Image source={color === "active" ? homeUnActive : homeActive} style={{ width: 30, height: 30 }} />
+                            </>
                         )
                     },
                 }}
@@ -63,11 +60,9 @@ export const BottomTabNavigation = () => {
                 options={{
                     tabBarIcon: ({ color }) => {
                         return (
-                            <Ionicons
-                                name="home"
-                                size={30}
-                                color={color}
-                            />
+                            <>
+                                <Image source={color === "active" ? calendarUnActive : calendarActive} style={{ width: 30, height: 30 }} />
+                            </>
                         )
                     },
                 }}
@@ -79,11 +74,9 @@ export const BottomTabNavigation = () => {
                 options={{
                     tabBarIcon: ({ color }) => {
                         return (
-                            <Ionicons
-                                name="home"
-                                size={30}
-                                color={color}
-                            />
+                            <>
+                                <Image source={color === "active" ? phoneUnActive : phoneActive} style={{ width: 30, height: 30 }} />
+                            </>
                         )
                     },
                 }}
@@ -95,11 +88,9 @@ export const BottomTabNavigation = () => {
                 options={{
                     tabBarIcon: ({ color }) => {
                         return (
-                            <Ionicons
-                                name="home"
-                                size={30}
-                                color={color}
-                            />
+                            <>
+                                <Image source={color === "active" ? crownUnActive : crownActive} style={{ width: 30, height: 30 }} />
+                            </>
                         )
                     },
                 }}
