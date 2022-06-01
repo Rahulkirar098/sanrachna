@@ -32,14 +32,6 @@ export const Dashboard = () => {
         navigation.navigate('MainChat')
     }
 
-    const getCities = async () => {
-        const fetchapi = await fetch('https://sanrachna-a968f-default-rtdb.firebaseio.com/Money.json');
-        const response = fetchapi.json().then(res => setPaisaMila(res))
-    }
-
-    useEffect(() => {
-        getCities()
-    }, [])
 
     return (
         <SecondaryWrapper>
@@ -51,10 +43,6 @@ export const Dashboard = () => {
                 handleToChat={handleToChat}
             />
 
-            {
-                !paisaMila ?
-                    <Warning />
-                    :
                     <View style={styles.navigationView}>
 
                         <FlatList
@@ -76,7 +64,7 @@ export const Dashboard = () => {
                         />
 
                     </View>
-            }
+     
 
         </SecondaryWrapper>
     )
